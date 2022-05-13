@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <!--Webpage Title -->
+    <title> Crown Beauty Salon Bookings</title>
+    <link rel="stylesheet" href="styleSheet.css" />
+    <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="js/cycle2.js"></script>
+    <!--Links for calander jquery plugin-->
+    <script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript" src="daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="calender.css" />
+    <script type="text/javascript" src="js/scriptfile.js"></script>
+</head>
+		
+<body>
+
+	<div class="nav">
+		<img src="logo.png" alt="logo error" />
+		<a href="contactus.html">Contact Us</a>
+		<a href="services.html">Services</a>
+		<a href="appointments.html">Bookings</a>
+		<a href="index.html">Home</a>
+	</div>
+    <form action="" id="bookform" onsubmit="bookingconfirm()">
+        <div class="wrapbook">
+                <h1> Make your Booking!</h1>
+            <div class="book">
+                <label for="dates">Date:</label>
+                <input type="text" name="calender" id="dates" />
+                <label for="times">Time:</label>
+                <select id="times">
+                    <option value="9:00">9:00</option>
+                    <option value="9:30">9:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="finame">First Name: </label>
+                <input type="text" id="finame" required />
+                <label for="laname">Last Name:</label>
+                <input type="text" id="laname" />
+            </div>
+            <div class="book">
+                <label for="emails">Email:</label>
+                <input type="email" id="emails" required />
+            </div>
+            <div class="book">
+                <label for="nails">Nails:</label>
+                <select id="nails" onchange="showEstimate()">
+                    <option value="No Nails">No Nails</option>
+                    <option value="File and Polish">File and Polish</option>
+                    <option value="Kids File and Polish">Kids File and Polish</option>
+                    <option value="Classic Manicure">Classic Manicure</option>
+                    <option value="Spa Manicure">Spa Manicure</option>
+                    <option value="Spa Manicure with Gel Polish">Spa Manicure with Gel Polish</option>
+                    <option value="File and Polish(Feet)">File and Polish(Feet)</option>
+                    <option value="Classic Pedicure">Classic Pedicure</option>
+                    <option value="Spa Pedicure">Spa Pedicure</option>
+                    <option value="Spa Pedicure with Gel Polish">Spa Pedicure with Gel Polish</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="nailex">Nail Extensions:</label>
+                <select id="nailex" onchange="showEstimate()">
+                    <option value="No Extensions">No Extensions</option>
+                    <option value="Gel Nails">Gel Nails</option>
+                    <option value="Acrylic Nails">Acrylic Nails</option>
+                    <option value="Dip Nails">Dip Nails</option>
+                    <option value="Shellac Polish">Shellac Polish</option>
+                    <option value="Removal and Clean Up">Removal and Clean Up</option>
+                    <option value="Removal and Polish">Removal and Polish</option>
+                    <option value="Nail Repair">Nail Repair</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="wax">Waxing:</label>
+                <select id="wax" onchange="showEstimate()">
+                    <option value="No Wax">No Wax</option>
+                    <option value="Brows">Brows</option>
+                    <option value="Lip">Lip</option>
+                    <option value="Chin">Chin</option>
+                    <option value="Under Arms">Under Arms</option>
+                    <option value="Full Arms">Full Arms</option>
+                    <option value="Abdomen">Abdomen</option>
+                    <option value="Half Leg">Half Leg</option>
+                    <option value="Full Leg">Full Leg</option>
+                    <option value="Bikini Line">Bikini Line</option>
+                    <option value="Californian">Californian</option>
+                    <option value="Brazilian">Brazilian</option>
+                    <option value="Hollywood">Hollywood</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="tint">Tinting:</label>
+                <select id="tint" onchange="showEstimate()">
+                    <option value="No Tint">No Tint</option>
+                    <option value="Eyelash Tint">Eyelash Tint</option>
+                    <option value="Brow Tint">Brow Tint</option>
+                    <option value="Brow Wax and Tint">Brow Wax and Tint</option>
+                    <option value="Wax, Eyelash and Brow Tint">Wax, Eyelash and Brow Tint</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="hairstyle">Hair Styling:</label>
+                <select id="hairstyle" onchange="showEstimate()">
+                    <option value="No Style">No Style</option>
+                    <option value="Cut(Short)">Cut(Short)</option>
+                    <option value="Cut(Medium)">Cut(Medium)</option>
+                    <option value="Cut(Long)">Cut(Long)</option>
+                    <option value="Kids Cut">Kids Cut</option>
+                    <option value="Blowdry">Blowdry</option>
+                    <option value="Updo">Updo</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="haircolor">Hair Colouring:</label>
+                <select id="haircolor" onchange="showEstimate()">
+                    <option value="No Colour">No Colour</option>
+                    <option value="Fullhead">Fullhead</option>
+                    <option value="Ombre">Ombre</option>
+                    <option value="Fullhead Highlights">Fullhead Highlights</option>
+                    <option value="Halfhead Highlights">Halfhead Highlights</option>
+                    <option value="T-Bar">T-Bar</option>
+                    <option value="Floods">Floods</option>
+                    <option value="Bleach Treatment">Bleach Treatment</option>
+                </select>
+            </div>
+            <div class="book">
+                <label for="extra">Add Comment:</label>
+                <br/>
+                <input type="text" id="extra" style="height:200px; width:600px;">
+            </div>
+                <div id="estimate" class="Estimate"></div>
+                <div id="errormess" class="Estimate"></div>
+            <div class="buttoncenter">
+                <input type="submit" value="Submit" onsubmit="confirmbox()"/>
+            </div>
+        </div>
+        <img src="bookpic.jpg" alt="error" class="bookimg"/>
+    </form>
+	<footer>
+		<div class="footertext">
+			<h1>Crown Beauty</h1>
+			<h2> Email us at:</h2>
+			<p> info@crownbeauty.ie</p>
+			<p> bookings@crownbeauty.ie</p>
+			<h2> Call us at:</h2>
+			<p> 08X-XXX-XXXX</p>
+			<p> 01-XXX-XXXX</p>
+		</div>
+		<img src="logo2.png" alt="logoerror" class="logo2" />
+		<div>
+			<h1>Find us on Social Media.</h1>
+			<a href="https://www.facebook.com/" class="fancyimg">
+				<img src="fblogo.png" alt="fb" />
+			</a>
+			<a href="https://www.instagram.com/" class="fancyimg">
+				<img src="instalogo.png" alt="instagram" />
+			</a>
+		</div>
+	</footer>
+</body>
+</html>
