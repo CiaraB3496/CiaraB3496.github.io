@@ -26,7 +26,7 @@
 		<a href="appointments.html">Bookings</a>
 		<a href="index.html">Home</a>
 	</div>
-    <form action="" id="bookform" onsubmit="bookingconfirm()">
+    <form action="" id="bookform" onsubmit="confirmbox()">
         <div class="wrapbook">
                 <h1> Make your Booking!</h1>
             <div class="book">
@@ -152,7 +152,7 @@
                 <div id="estimate" class="Estimate"></div>
                 <div id="errormess" class="Estimate"></div>
             <div class="buttoncenter">
-                <input type="submit" value="Submit" onsubmit="confirmbox()"/>
+                <input type="submit" value="Submit" onclick="bookingconfirm()"/>
             </div>
         </div>
         <img src="bookpic.jpg" alt="error" class="bookimg"/>
